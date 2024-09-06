@@ -1,0 +1,40 @@
+﻿<Page x:Class="Library_Manager.Pages.Employee.EmployeeBooks"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Library_Manager"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal" 
+      TextOptions.TextRenderingMode="Auto"        
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="books">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="1.1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" Margin="20 10" Text="Book"/>
+            </StackPanel>
+            <Separator Margin="20 0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" Margin="20 0">
+            <ListBox Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}" x:Name="RadioButtonGroupChoiceChipPrimary">
+                <ListBoxItem Content="All Books" />
+                <ListBoxItem IsSelected="True" Content="Borrowed Books" />
+                <ListBoxItem Content="Available Books" />
+            </ListBox>
+        </StackPanel>
+        <ListView Grid.Row="2"/>
+    </Grid>
+</Page>
